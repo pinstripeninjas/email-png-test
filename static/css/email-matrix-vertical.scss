@@ -1,0 +1,118 @@
+// Global color scheme
+$primary-blue: #0a4595;
+$dark-gray: #333;
+$secondary-blue: #0099d8;
+$light-gray: #eee;
+$green: rgba(97, 175, 95, 0.4);
+$yellow: rgb(255, 240, 80);
+$red: #f25c05;
+
+// mixins
+@mixin flexCenter {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin matrixBorder {
+	border-bottom: 1px solid #fff;
+	border-right: 1px solid #fff;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Quicksand", sans-serif;
+}
+
+section {
+	width: 50%;
+}
+
+.divider {
+	border-top: 2px solid $primary-blue;
+	border-bottom: 2px solid $primary-blue;
+	padding: 7px;
+	color: $primary-blue;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.matrix,
+.criteria {
+	padding: 20px;
+	padding-top: 0;
+}
+
+// matrix ////////////////////////////////////////////
+.matrix-header,
+.criteria-header {
+	@include flexCenter();
+	font-weight: 700;
+	.field-name {
+		border: none;
+	}
+}
+
+.header-item {
+	width: 10%;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.matrix-row {
+	@include flexCenter();
+}
+
+.matrix-row:nth-of-type(1) {
+	@include flexCenter();
+	.field-name {
+		border-top: 1px solid $light-gray;
+	}
+}
+
+.field-name {
+	width: 30%;
+	font-weight: 700;
+	padding: 10px 0;
+	border-bottom: 1px solid $light-gray;
+}
+
+.forecast-item {
+	width: 10%;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+}
+
+// Criteria classes /////////////////////////////////
+.criteria-header-item {
+	width: calc(70% / 3);
+	padding: 10px 0;
+	text-align: center;
+}
+
+.criteria-item {
+	width: calc(70% / 3);
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+}
+
+// color classes for matrix //////////////////////////////
+.green {
+	background-color: $green;
+	@include matrixBorder();
+}
+
+.yellow {
+	background-color: $yellow;
+	@include matrixBorder();
+}
+
+.red {
+	background-color: $red;
+	@include matrixBorder();
+	color: #fff;
+}
